@@ -1,0 +1,115 @@
+.get-started {
+    padding-top: 13rem; /* pt-12 */
+    padding-bottom: 3rem; /* pb-8 */
+    padding-left: 2rem; /* px-8 */
+    padding-right: 4rem; /* px-8 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: visible;
+    background: linear-gradient(to bottom right, #01222C, #2296B8);
+  }
+  
+  .get-started-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 80rem; /* max-w-screen-md */
+  }
+  
+  .text-section {
+    flex: 1;
+    text-align: left;
+    color: white;
+    padding-bottom: 2rem; /* pt-12 */
+  }
+  
+  .text-section h2 {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: bold;
+    margin-bottom: 0.75rem; /* mb-3 */
+  }
+  
+  .text-section p {
+    margin-bottom: 1rem; /* mb-4 */
+    font-size: 0.875rem; /* text-sm */
+  }
+  
+  .text-section button {
+    padding: 0.5rem 1rem; /* px-4 py-2 */
+    background-color: white;
+    color: #0e3e5c;
+    border-radius: 9999px; /* rounded-full */
+    font-weight: 600; /* font-semibold */
+    font-size: 0.875rem; /* text-sm */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .text-section button:hover {
+    background-color: #f1f1f1; /* hover:bg-gray-100 */
+  }
+  
+  .image-section {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start; /* Move images to the top */
+    margin-left: 3rem; /* md:ml-12 */
+    position: absolute;
+    top: -3.5rem; /* Adjust as needed */
+    right: 2rem; /* Adjust as needed */
+  }
+  
+  .image-container {
+    display: flex;
+    gap: 0.7rem; /* Space between images */
+  }
+  
+  .image-container img {
+    width: auto;
+    max-width: 12rem; /* Adjust width as needed */
+    height: auto;
+    object-fit: contain; /* Ensure images are not cropped */
+  }
+  
+  .image-container img:nth-child(2) {
+    margin-top: 3.5rem; /* Move the second image (signUp) down slightly */
+  }
+  
+  /* Mobile Responsive Adjustments */
+  @media (max-width: 768px) {
+    .get-started {
+      padding-left: 1rem; /* Adjust padding for mobile */
+      padding-right: 1rem; /* Adjust padding for mobile */
+    }
+  
+    .get-started-container {
+      flex-direction: column;
+    }
+  
+    .image-section {
+      position: static; /* Remove absolute positioning */
+      margin-left: 0; /* Reset margin */
+      margin-top: 1rem; /* Add margin to separate from text section */
+      padding-right: 1rem;
+      align-items: center; /* Center images on mobile */
+    }
+  
+    .image-container {
+      flex-direction: row; /* Make images side by side on mobile */
+      gap: 1rem; /* Increase gap between images on mobile */
+    }
+  
+    .image-container img {
+      max-width: 50%; /* Make images take half width on mobile */
+    }
+  
+    .image-container img:nth-child(2) {
+      margin-top: 0.5rem; /* Adjust the margin for mobile view if needed */
+    }
+  }
+  
