@@ -10,7 +10,7 @@ const GetStarted = () => {
         <h2 className="text-5xl font-bold mb-5">Ready to Get Started?</h2>
         <p className="mb-10 text-lg">
           Download the app now on your smart phone & enjoy a safe
-          and pocket friendly journey with Radify!
+          and pocket friendly journey with Rydify!
         </p>
         <button className="px-8 py-3 bg-white text-[#0e3e5c] rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors">
           Download App
