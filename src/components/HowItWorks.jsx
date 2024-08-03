@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaSearch, FaUserCheck, FaCar } from 'react-icons/fa';
-import Main from '../../public/main.png';
+import Main from '../../public/main.svg';
 
 const HowItWorks = () => {
   return (

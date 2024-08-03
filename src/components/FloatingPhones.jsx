@@ -1,6 +1,6 @@
 // FloatingPhones.jsx
 import React from 'react';
-import HomeImg from '../assets/homeone.jpg';
+import HomeImg from '../assets/Home.svg';
 import signUp from '../assets/sign_up.jpg';
 
 const FloatingPhones = () => {

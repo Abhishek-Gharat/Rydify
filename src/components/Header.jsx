@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaMapMarkerAlt } from 'react-icons/fa';
-import Top from '../../public/top.png';
-import Logo from '../../public/logo.png';
+import Top from '../../public/top.svg';
+import Logo from '../../public/logo.svg';
 
 const Header = () => {
   return (

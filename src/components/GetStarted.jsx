@@ -1,6 +1,6 @@
 import React from 'react';
-import HomeImg from '../../public/Home.png';
-import signUp from '../../public/signup.png';
+import HomeImg from '../../public/Home.svg'; // Update the path if necessary
+import signUp from '../../public/signup.svg'; // Update the path if necessary
 import './GetStarted.css'; // Ensure you import the CSS file
 
 const GetStarted = ({ reverseLayout = false }) => {
@@ -9,13 +9,13 @@ const GetStarted = ({ reverseLayout = false }) => {
       <div className="get-started-container">
         {/* Text Section */}
         <div className={`text-section ${reverseLayout ? 'md:order-2' : 'md:order-1'}`}>
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">
+          <h2 className="text-2xl md:text-3xl font-bold">
             Ready to Get Started?
           </h2>
           <p className="mb-4 text-sm md:text-base">
-            Download the app now on your smartphone & enjoy a safe and pocket-friendly journey with Rydify!
+            Download the app now on your smartphone & enjoy a safe and pocket-friendly journey with Radify!
           </p>
-          <button className="px-4 py-2 bg-white text-[#0e3e5c] rounded-full font-semibold text-sm hover:bg-gray-100 transition-colors">
+          <button className="download-button">
             Download App
           </button>
         </div>
