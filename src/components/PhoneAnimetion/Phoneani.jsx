@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { FiBatteryCharging, FiWifi } from "react-icons/fi";
 
@@ -14,42 +14,50 @@ const FloatingPhone = () => {
   // Initial rotation angles
   const initialRotation = { x: 15, y: -40 };
   const [rotation, setRotation] = useState(initialRotation);
+  const phoneRef = useRef(null);
 
   const handleMouseMove = (e) => {
-    // Get the bounding rectangle of the phone
-    const rect = e.currentTarget.getBoundingClientRect();
-    // Calculate center of the phone
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    // Calculate rotation based on mouse position
-    const angleX = ((e.clientY - centerY) / rect.height) * 50; // Adjust sensitivity (50) as needed
-    const angleY = ((e.clientX - centerX) / rect.width) * -50; // Adjust sensitivity (-50) as needed
+    if (phoneRef.current) {
+      // Get the bounding rectangle of the phone
+      const rect = phoneRef.current.getBoundingClientRect();
+      // Calculate center of the phone
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      // Calculate rotation based on mouse position
+      const angleX = ((e.clientY - centerY) / rect.height) * 50; // Adjust sensitivity (50) as needed
+      const angleY = ((e.clientX - centerX) / rect.width) * -50; // Adjust sensitivity (-50) as needed
 
-    setRotation({ x: angleX, y: angleY });
+      setRotation({ x: angleX, y: angleY });
+    }
   };
 
   const handleMouseLeave = () => setRotation(initialRotation);
 
   useEffect(() => {
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseleave", handleMouseLeave);
+    const phoneElement = phoneRef.current;
+
+    if (phoneElement) {
+      phoneElement.addEventListener("mousemove", handleMouseMove);
+      phoneElement.addEventListener("mouseleave", handleMouseLeave);
+    }
 
     return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseleave", handleMouseLeave);
+      if (phoneElement) {
+        phoneElement.removeEventListener("mousemove", handleMouseMove);
+        phoneElement.removeEventListener("mouseleave", handleMouseLeave);
+      }
     };
   }, []);
 
   return (
     <div
+      ref={phoneRef}
       style={{
         transformStyle: "preserve-3d",
         transform: `rotateY(${rotation.y}deg) rotateX(${rotation.x}deg)`,
         transition: "transform 0.2s ease-out", // Optional: Smooth transition
       }}
       className="rounded-[24px] bg-[rgba(0,0,0,0.5)] shadow-[0_10px_5px_rgba(0,0,0,0.3)]"
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
     >
       <motion.div
         initial={{
@@ -73,7 +81,6 @@ const FloatingPhone = () => {
   );
 };
 
-
 const HeaderBar = () => {
   return (
     <>
@@ -85,6 +92,7 @@ const HeaderBar = () => {
     </>
   );
 };
+
 const Screen = () => {
   return (
     <div className="relative z-0 grid h-full w-full place-content-center overflow-hidden rounded-[20px] bg-white">
@@ -98,7 +106,7 @@ const Screen = () => {
         Rydify
       </button>
       <div className="absolute -bottom-72 left-[50%] h-96 w-96 -translate-x-[50%] rounded-full bg-[#6fcf97]" />
-      </div>
+    </div>
   );
 };
 
