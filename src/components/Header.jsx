@@ -47,7 +47,7 @@ const Header = () => {
             variants={containerVariants} // Apply container variants here
           >
            <motion.h1
-              className="linear__text__gradient text-4xl font-extrabold leading-50 tracking-tight  sm:text-6xl sm:leading-none md:text-6xl"
+              className="linear__text__gradient text-5xl font-extrabold leading-10 tracking-tight  sm:text-4xl sm:leading-none md:text-4xl"
               style={{ fontFamily: 'Merriweather, serif' }} // Apply the Merriweather font here
               initial="hidden"
               animate="visible"
