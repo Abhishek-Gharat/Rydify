@@ -1,0 +1,67 @@
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 100;
+    transition: opacity 4.7s ease-out;
+  }
+  
+  .loader.fade-out {
+    opacity: 0;
+  }
+  
+  .leaf-stem {
+    stroke-dasharray: 20;
+    stroke-dashoffset: 20;
+    animation: drawStem 1s ease forwards;
+  }
+  
+  .leaf-body {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: drawBody 2s ease forwards 0.5s;
+  }
+  
+  .leaf-circle {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: drawCircle 2.5s ease forwards 1s;
+  }
+  
+  .text {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: drawText 1.5s ease forwards 1.5s;
+  }
+  
+  @keyframes drawStem {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @keyframes drawBody {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @keyframes drawCircle {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @keyframes drawText {
+    to {
+      stroke-dashoffset: 0;
+      fill: #036B86;
+    }
+  }

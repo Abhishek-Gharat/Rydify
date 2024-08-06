@@ -1,16 +1,40 @@
 import React from 'react';
 import { FaSearch, FaUserCheck, FaCar } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import Main from '../../public/main.svg';
 
 const HowItWorks = () => {
+  const { ref: sectionRef, inView: sectionInView } = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
+
   return (
-    <section className="pt-10 pb-32 max-w-5xl mx-auto px-4">
+    <section
+      ref={sectionRef}
+      className="pt-20 pb-32 max-w-6xl mx-auto px-4"
+    >
       <div className="flex flex-col md:flex-row justify-between items-center">
         <div className="md:w-1/2 md:pr-8 mb-8 md:mb-0">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-left">Wondering How Rydify Works?</h2>
-          <p className="text-gray-600 mb-8 text-left">Let us walk you through that!</p>
-          
-          <div className="space-y-6 text-left">
+          <motion.h2
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: sectionInView ? 1 : 0, y: sectionInView ? 0 : -50 }}
+            transition={{ duration: 0.5 }}
+            className="text-2xl md:text-3xl font-bold mb-4 text-left"
+          >
+            Wondering How Rydify Works?
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: sectionInView ? 1 : 0, y: sectionInView ? 0 : 20 }}
+            transition={{ duration: 0.5 }}
+            className="text-gray-600 mb-8 text-left"
+          >
+            Let us walk you through that!
+          </motion.p>
+
+          <div className="space-y-10 text-left">
             <Step 
               icon={<FaSearch className="text-[#0e7490]" />}
               title="Search for Ride"
@@ -19,7 +43,7 @@ const HowItWorks = () => {
             <Step 
               icon={<FaUserCheck className="text-[#0e7490]" />}
               title="Choose a Driver"
-              description="Select from various drivers that fits your schedule"
+              description="Select from various drivers that fit your schedule"
             />
             <Step 
               icon={<FaCar className="text-[#0e7490]" />}
@@ -30,10 +54,13 @@ const HowItWorks = () => {
         </div>
         
         <div className="md:w-1/2">
-          <img 
+          <motion.img
             src={Main} 
             alt="Rydify illustration" 
             className="w-full h-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: sectionInView ? 1 : 0 }}
+            transition={{ duration: 0.5 }}
           />
         </div>
       </div>
@@ -41,16 +68,29 @@ const HowItWorks = () => {
   );
 };
 
-const Step = ({ icon, title, description }) => (
-  <div className="flex items-start">
-    <div className="mr-4 mt-1">
-      {React.cloneElement(icon, { size: 24 })}
-    </div>
-    <div>
-      <h3 className="text-lg md:text-xl font-semibold">{title}</h3>
-      <p className="mt-1 text-gray-600 text-sm md:text-base">{description}</p>
-    </div>
-  </div>
-);
+const Step = ({ icon, title, description }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, x: -50 }}
+      animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -50 }}
+      transition={{ duration: 0.5 }}
+      className="flex items-start"
+    >
+      <div className="mr-4 mt-1">
+        {React.cloneElement(icon, { size: 24 })}
+      </div>
+      <div>
+        <h3 className="text-lg md:text-xl font-semibold">{title}</h3>
+        <p className="mt-1 text-gray-600 text-sm md:text-base">{description}</p>
+      </div>
+    </motion.div>
+  );
+};
 
 export default HowItWorks;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import HomeImg from '../../public/Home.svg'; // Update the path if necessary
 import signUp from '../../public/signup.svg'; // Update the path if necessary
 import './GetStarted.css'; // Ensure you import the CSS file
@@ -23,8 +24,20 @@ const GetStarted = ({ reverseLayout = false }) => {
         {/* Image Section */}
         <div className={`image-section ${reverseLayout ? 'md:order-1' : 'md:order-2'}`}>
           <div className="image-container">
-            <img src={HomeImg} alt="App Screenshot 1" className="image" />
-            <img src={signUp} alt="App Screenshot 2" className="image" />
+            <motion.img
+              src={HomeImg}
+              alt="App Screenshot 1"
+              className="image"
+              whileHover={{ scale: 1.1 }} // Zoom effect on hover
+              transition={{ type: 'spring', stiffness: 300, damping: 20 }} // Smooth transition
+            />
+            <motion.img
+              src={signUp}
+              alt="App Screenshot 2"
+              className="image"
+              whileHover={{ scale: 1.1 }} // Zoom effect on hover
+              transition={{ type: 'spring', stiffness: 300, damping: 20 }} // Smooth transition
+            />
           </div>
         </div>
       </div>

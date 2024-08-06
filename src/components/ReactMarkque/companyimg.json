@@ -1,0 +1,15 @@
+{
+    "companies": [
+      { "id": 1, "imageName": "one.png" },
+      { "id": 2, "imageName": "two.png" },
+      { "id": 3, "imageName": "three.png" },
+      { "id": 4, "imageName": "four.png" },
+      { "id": 5, "imageName": "five.png" },
+      { "id": 6, "imageName": "six.png" },
+      { "id": 7, "imageName": "seven.png" },
+      { "id": 8, "imageName": "eight.png" }
+    ]
+  }
+
+
+  
