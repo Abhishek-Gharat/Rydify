@@ -10,7 +10,7 @@
     object-fit: cover;
   }
   .linear__text__gradient {
-    background: linear-gradient(to right bottom, rgb(0, 0, 0) 10%, #000000);
+    background: linear-gradient(to right bottom, rgb(36, 38, 36) 20%, #000000);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }

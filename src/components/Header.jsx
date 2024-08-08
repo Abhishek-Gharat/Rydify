@@ -46,15 +46,17 @@ const Header = () => {
             animate="visible"
             variants={containerVariants} // Apply container variants here
           >
-           <motion.h1
-              className="linear__text__gradient text-5xl font-extrabold leading-10 tracking-tight  sm:text-4xl sm:leading-none md:text-4xl"
-              style={{ fontFamily: 'Merriweather, serif' }} // Apply the Merriweather font here
-              initial="hidden"
-              animate="visible"
-              variants={textVariants}
-            >
-              Revolutionizing Ride Sharing in United States
-            </motion.h1>
+    <motion.h1
+  className="linear__text__gradient text-5xl font-bold leading-tight tracking-normal text-gray-900 sm:text-4xl sm:leading-snug md:text-5xl"
+  // style={{ fontFamily: 'Merriweather, serif' }} // Apply the Merriweather font here
+  initial="hidden"
+  animate="visible"
+  variants={textVariants}
+>
+  Revolutionizing Ride Sharing in the United States
+</motion.h1>
+
+
             <motion.p
               className="text-gray-600 mb-6 mt-2"
               variants={textVariants}
