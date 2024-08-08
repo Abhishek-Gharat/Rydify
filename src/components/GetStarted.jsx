@@ -13,9 +13,14 @@ const GetStarted = ({ reverseLayout = false }) => {
           <h2 className="text-2xl md:text-3xl font-bold">
             Ready to Get Started?
           </h2>
-          <p className="mb-4 text-sm md:text-base">
-            Download the app now on your smartphone & enjoy a safe and pocket-friendly journey with Radify!
-          </p>
+          <div className="text-content">
+            <p className="text-sm md:text-base">
+              Download the app now on your smartphone & enjoy a safe
+            </p>
+            <p className="text-sm md:text-base">
+              and pocket-friendly journey with Radify!
+            </p>
+          </div>
           <button className="download-button">
             Download App
           </button>

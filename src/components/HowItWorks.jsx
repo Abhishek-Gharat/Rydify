@@ -3,7 +3,8 @@ import { FaSearch, FaUserCheck, FaCar } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Main from '../../public/main.svg';
-
+import CarSvg from '../../public/Car.svg'; // Adjust path as needed
+import DriverSvg from '../../public/driver.svg'
 const HowItWorks = () => {
   const { ref: sectionRef, inView: sectionInView } = useInView({
     triggerOnce: false,
@@ -13,9 +14,9 @@ const HowItWorks = () => {
   return (
     <section
       ref={sectionRef}
-      className="pt-20 pb-32 max-w-6xl mx-auto px-4"
+      className="pt-20 pb-32 px-4 mx-auto max-w-[1300px]"
     >
-      <div className="flex flex-col md:flex-row justify-between items-center">
+      <div className="flex flex-col md:flex-row justify-between items-start gap-12">
         <div className="md:w-1/2 md:pr-8 mb-8 md:mb-0">
           <motion.h2
             initial={{ opacity: 0, y: -50 }}
@@ -53,11 +54,11 @@ const HowItWorks = () => {
           </div>
         </div>
         
-        <div className="md:w-1/2">
+        <div className="md:w-1/2 flex justify-end">
           <motion.img
             src={Main} 
             alt="Rydify illustration" 
-            className="w-full h-auto"
+            className="w-full max-w-[500px] h-auto" 
             initial={{ opacity: 0 }}
             animate={{ opacity: sectionInView ? 1 : 0 }}
             transition={{ duration: 0.5 }}

@@ -1,0 +1,134 @@
+General Styles
+.section {
+    padding-top: 100px;
+    padding-bottom: 150px;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-left: 16px;
+    padding-right: 6px;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .flex-col-reverse {
+    flex-direction: column-reverse;
+  }
+  
+  .flex-row {
+    flex-direction: row;
+  }
+  
+  .items-center {
+    align-items: center;
+  }
+  
+  .gap-48 {
+    gap: 48px;
+  }
+  
+  .md\:w-1\/2 {
+    width: 50%;
+  }
+  
+  .md\:pr-8 {
+    padding-right: 32px;
+  }
+  
+  .text-left {
+    text-align: left;
+  }
+  
+  .text-2xl {
+    font-size: 1.5rem;
+  }
+  
+  .text-3xl {
+    font-size: 1.875rem;
+  }
+  
+  .font-bold {
+    font-weight: bold;
+  }
+  
+  .text-gray-600 {
+    color: #4b5563;
+  }
+  
+  .mb-4 {
+    margin-bottom: 1rem;
+  }
+  
+  .mb-8 {
+    margin-bottom: 2rem;
+  }
+  
+  .space-y-10 > * + * {
+    margin-top: 2.5rem;
+  }
+  
+  .text-lg {
+    font-size: 1.125rem;
+  }
+  
+  .text-xl {
+    font-size: 1.25rem;
+  }
+  
+  .text-sm {
+    font-size: 0.875rem;
+  }
+  
+  .text-base {
+    font-size: 1rem;
+  }
+  
+  .mr-4 {
+    margin-right: 1rem;
+  }
+  
+  .mt-1 {
+    margin-top: 0.25rem;
+  }
+  
+  .w-full {
+    width: 100%;
+  }
+  
+  .h-auto {
+    height: auto;
+  }
+  
+  /* Mobile Responsive Styles */
+  @media (max-width: 768px) {
+    .flex-col-reverse {
+      flex-direction: column;
+    }
+  
+    .flex-row {
+      flex-direction: column;
+    }
+  
+    .gap-48 {
+      gap: 16px; /* Adjusted gap for less space between image and text */
+    }
+  
+    .md\:w-1\/2 {
+      width: 100%;
+    }
+  
+    .md\:pr-8 {
+      padding-right: 10px;
+    }
+  
+    .flex {
+      justify-content: center; /* Center content horizontally */
+    }
+  
+    .md\:w-1\/2 img {
+      display: block;
+      margin: 0 auto; /* Center the image horizontally */
+      max-width: 300px;
+    }
+  }

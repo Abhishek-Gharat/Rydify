@@ -3,3 +3,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+:root {
+    --primary-900: #010e0e; /* Define your primary-900 color here */
+  }

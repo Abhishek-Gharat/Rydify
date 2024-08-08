@@ -67,7 +67,7 @@ const Header = () => {
               className="flex justify-center md:justify-start items-center text-[#0e7490]"
               variants={textVariants}
             >
-              <FaMapMarkerAlt className="mr-2" />
+              <FaMapMarkerAlt className="mr-2 text-3xl" />
               <span className="font-semibold">One Stop Ride Solution</span>
             </motion.div>
           </motion.div>
