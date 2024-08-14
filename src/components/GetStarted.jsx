@@ -18,7 +18,7 @@ const GetStarted = ({ reverseLayout = false }) => {
               Download the app now on your smartphone & enjoy a safe
             </p>
             <p className="text-sm md:text-base">
-              and pocket-friendly journey with Radify!
+              and pocket-friendly journey with Rydify!
             </p>
           </div>
           <button className="download-button">
