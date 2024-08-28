@@ -46,22 +46,25 @@ const Header = () => {
             animate="visible"
             variants={containerVariants} // Apply container variants here
           >
-    <motion.h1
-  className="linear__text__gradient text-5xl font-bold leading-tight tracking-normal text-gray-900 sm:text-4xl sm:leading-snug md:text-5xl"
-  // style={{ fontFamily: 'Merriweather, serif' }} // Apply the Merriweather font here
-  initial="hidden"
-  animate="visible"
-  variants={textVariants}
->
-  Revolutionizing Ride Sharing in the United States
-</motion.h1>
+   <motion.h1
+    className="text-4xl sm:text-5xl md:text-7xl  leading-tight tracking-tight text-gray-900 mb-4"
+    style={{ fontWeight: 500 }}
+    initial="hidden"
+    animate="visible"
+    variants={textVariants}
+  >
+    <span className="block mb-2">Revolutionizing</span>
+    <span className="block mb-2">Ride-Sharing in</span>
+    <span className="block">United States</span>
+  </motion.h1>
 
 
             <motion.p
-              className="text-gray-600 mb-6 mt-2"
+              className="text-gray-600 mb-6 mt-2 ml-2"
               variants={textVariants}
             >
-              Affordable, Sustainable and Community-Driven travel
+              {/* Affordable, Sustainable and Community-Driven travel */}
+              Share Rides, Split Costs, and Travel Together
             </motion.p>
             <motion.div
               className="flex justify-center md:justify-start items-center text-[#0e7490]"
